@@ -1,0 +1,51 @@
+﻿@model List<BookTrackingSystem.Models.book>
+
+@{
+    ViewData["Title"] = "Employee Details";
+}
+
+<h3>@ViewData["Title"]</h3>
+<hr />
+<form>
+    <table class="table table-responsive table-hover">
+        <thead>
+            <tr>
+                <th>Book name</th>
+                <th>Author</th>
+                <th>Register Time</th>
+                <th>Issuer</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Any())
+            {
+                @foreach (var book in Model)
+                {
+                    <tr>
+                        <td>@book.bookName</td>
+                        <td>@book.author</td>
+                        <td>@book.registerTime</td>
+                        <td>@book.issuer</td>
+                        <td><div class="btn-group btn-group-sm"><a asp-controller="DisplayBook" asp-action="editBook" asp-route-id="@book.bookID" class="btn btn-primary">Edit</a></div></td>
+                        <td><div class="btn-group btn-group-sm"><a asp-controller="DisplayBook" asp-action="deleteBook" asp-route-id="@book.bookID" class="btn btn-danger">Delete</a></div></td>
+                    </tr>
+                }
+            }
+
+            else
+            {
+                <tr>
+                    <td colspan="6">
+                        <div>
+                            No books are available at this moment!
+                        </div>
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+
+    </table>
+
+</form>
