@@ -1,0 +1,49 @@
+﻿@*@model IEnumerable<Microsoft.AspNetCore.Identity.IdentityUserRole<string>>*@
+@model BookTrackingSystem.Models.Users
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+
+@if (null != TempData["alertMessage"])
+{
+    <script type="text/javascript">
+        alert('@TempData["alertMessage"]');
+    </script>
+}
+
+<div class="bg-secondary bg-opacity-10 py-2">
+    <div class="container">
+        <h1>Edit User Role - Admin Functionality</h1>
+    </div>
+</div>
+
+<div>
+
+    <form method="post">
+        <div class="mb-3">
+            <label class="form-label">User ID</label>
+            <input type="text" name="Id" class="form-control" asp-for="Id" readonly />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">User Name</label>
+            <input type="text" name="UserName" class="form-control" asp-for="UserName" readonly />
+        </div>
+
+        <br />
+
+
+
+        <div class="mb-3">
+            <div class="d-flex">
+                <button type="submit" class="btn btn-dark">Update Role</button>
+            </div>
+
+        </div>
+
+
+
+    </form>
+
+</div>

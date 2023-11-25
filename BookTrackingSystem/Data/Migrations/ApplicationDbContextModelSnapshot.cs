@@ -17,10 +17,87 @@ namespace BookTrackingSystem.Data.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.11")
+                .HasAnnotation("ProductVersion", "7.0.12")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("BookTrackingSystem.Models.BorrowBookRequest", b =>
+                {
+                    b.Property<Guid>("borrowID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("bookID")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("bookName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("borrowDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("expectReturnDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("fullName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("libraryCardNo")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("remark")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("borrowID");
+
+                    b.ToTable("BorrowBookRequests");
+                });
+
+            modelBuilder.Entity("BookTrackingSystem.Models.ReturnList", b =>
+                {
+                    b.Property<Guid>("returnID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("bookID")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("bookName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("borrowDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("borrowID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("expectReturnDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("fullName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("libraryCardNo")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("remark")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("returnID");
+
+                    b.ToTable("ReturnLists");
+                });
 
             modelBuilder.Entity("BookTrackingSystem.Models.book", b =>
                 {
@@ -43,28 +120,13 @@ namespace BookTrackingSystem.Data.Migrations
                     b.Property<DateTime>("registerTime")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("bookID");
 
                     b.ToTable("books");
-                });
-
-            modelBuilder.Entity("BookTrackingSystem.Models.user", b =>
-                {
-                    b.Property<Guid>("userID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("password")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("username")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("userID");
-
-                    b.ToTable("users");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

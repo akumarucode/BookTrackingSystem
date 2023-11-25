@@ -8,6 +8,19 @@
     <li class="nav-item">
         <a  class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity?.Name!</a>
     </li>
+
+            <li>
+                <div class="btn-group">
+                    <button type="button" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Settings</button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" asp-area="" asp-controller="Admin" asp-action="userSetting">User Setting</a></li>
+                        <li><a class="dropdown-item" asp-area="" asp-controller="RoleSetting" asp-action="roleSetting">Role Setting</a></li>
+                    <li><a class="dropdown-item" asp-area="" asp-controller="UserRole" asp-action="UserRoleSetting">User role Setting</a></li>
+
+                    </ul>
+                </div>
+            </li>
+
     <li class="nav-item">
         <form  class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
             <button  type="submit" class="nav-link btn btn-link text-dark">Logout</button>

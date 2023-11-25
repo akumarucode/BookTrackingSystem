@@ -1,0 +1,78 @@
+﻿@model BookTrackingSystem.Models.BorrowBookRequest
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+
+@if (null != TempData["alertMessage"])
+{
+    <script type="text/javascript">
+        alert('@TempData["alertMessage"]');
+    </script>
+}
+
+<div class="bg-secondary bg-opacity-10 py-2">
+    <div class="container">
+        <h1>Borrow book  </h1>
+    </div>
+</div>
+
+<div>
+    <form method="post">
+
+        <div class="mb-3">
+            <label class="form-label">Request ID</label>
+            <input type="text" name="borrowID" class="form-control" asp-for="borrowID" readonly />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Book ID</label>
+            <input type="text" name="bookID" class="form-control" asp-for="bookID" readonly />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Book Name</label>
+            <input type="text" name="bookName" class="form-control" asp-for="bookName" readonly />
+        </div>
+
+
+        <div class="mb-3">
+            <label class="form-label">Full Name</label>
+            <input type="text" name="fullName" class="form-control" asp-for="fullName" />
+        </div>        
+        
+        <div class="mb-3">
+            <label class="form-label">Library Card No.</label>
+            <input type="text" name="libraryCardNo" class="form-control" asp-for="libraryCardNo" />
+        </div>
+
+        <div class="form-group">
+            <label for="registerTime">Borrow Date</label><br>
+            <input type="datetime-local" id="borrowDate" class="form-control" name="borrowDate" asp-for="borrowDate">
+        </div>
+        <br />
+        
+        <div class="form-group">
+            <label for="registerTime">Expected Return Date</label><br>
+            <input type="datetime-local" id="borrowDate" class="form-control" name="expectReturnDate" asp-for="expectReturnDate">
+        </div>
+        <br />
+
+        <div class="mb-3">
+            <label class="form-label">Remark</label>
+            <textarea asp-for="remark" class="form-control" rows="5" cols="40"></textarea>
+        </div>
+
+
+        <div class="mb-3">
+            <div class="d-flex">
+                <button type="submit" class="btn btn-dark">Submit</button>
+            </div>
+
+        </div>
+
+
+
+    </form>
+
+</div>

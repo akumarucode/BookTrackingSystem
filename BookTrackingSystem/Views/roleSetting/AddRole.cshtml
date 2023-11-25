@@ -1,0 +1,88 @@
+﻿@using BookTrackingSystem.Models
+@model Role
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+
+
+<head>
+    <script src="/js/site.js"></script>
+
+    <!-- Include jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Include jQuery UI library -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+    <!-- Include jQuery UI CSS -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+
+</head>
+
+
+
+
+
+@if (null != TempData["alertMessage"])
+{
+    <script type="text/javascript">
+        alert('@TempData["alertMessage"]');
+    </script>
+}
+@if (SignInManager.IsSignedIn(User))
+{
+    @using (Html.BeginForm("AddRole", "RoleSetting", FormMethod.Post))
+    {
+        <form>
+            <div class="form-group">
+
+                <label for="roleNamelbl">Role Name</label>
+                @Html.TextBoxFor(m => m.Name, new { @class = "form-control", placeholder = "Enter role name" })
+                @Html.ValidationMessageFor(m => m.Name, "", new { style = "color: red; font-size: 10px;" })
+            </div>
+            <div class="form-group">
+
+                <label for="authorlbl">Normalized Name</label>
+                @Html.TextBoxFor(m => m.NormalizedName, new { @class = "form-control", placeholder = "Enter normalized role name" })
+                @Html.ValidationMessageFor(m => m.NormalizedName, "", new { style = "color: red; font-size: 10px;" })
+            </div>
+
+            <div class="form-group">
+
+                <label for="authorlbl">ConcurrencyStamp</label>
+                @Html.TextBoxFor(m => m.ConcurrencyStamp, new { @class = "form-control", placeholder = "Enter concurrency stamp name" })
+                @Html.ValidationMessageFor(m => m.ConcurrencyStamp, "", new { style = "color: red; font-size: 10px;" })
+            </div>
+            <br>
+
+
+            <button type="submit" class="btn btn-primary" id="submitrole">Submit</button>
+        </form>
+    }
+
+
+}
+
+else
+{
+    <h2>Please login first!</h2>
+}
+
+
+@*java scripts*@
+
+
+@*<script type="text/javascript">
+    $(document).ready(function () {
+        $("#submitrole").click(function () {
+            if ($("#roleName").val() == "") {
+                alert("Please enter role Name.");
+            }
+        });
+    });
+</script>*@
+
+

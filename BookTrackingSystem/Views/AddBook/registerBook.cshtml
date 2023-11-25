@@ -1,0 +1,95 @@
+﻿@using BookTrackingSystem.Models
+@model book
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+
+
+<head>
+    <script src="/js/site.js"></script>
+
+    <!-- Include jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Include jQuery UI library -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+    <!-- Include jQuery UI CSS -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+
+</head>
+
+
+
+
+
+@if (null != TempData["alertMessage"])
+{
+    <script type="text/javascript">
+        alert('@TempData["alertMessage"]');
+    </script>
+}
+
+@if (SignInManager.IsSignedIn(User))
+{
+    @using (Html.BeginForm("registerBook", "AddBook", FormMethod.Post))
+    {
+        <form>
+            <div class="form-group">
+                
+                <label for="bookNamelbl">Book Name</label>
+                @Html.TextBoxFor(m => m.bookName, new { @class = "form-control", placeholder = "Enter book name" })
+                @Html.ValidationMessageFor(m => m.bookName, "", new { style = "color: red; font-size: 10px;" })
+            </div>
+            <div class="form-group">
+                
+                <label for="authorlbl">Author</label>
+                @Html.TextBoxFor(m => m.author, new { @class = "form-control", placeholder = "Enter author name" })
+                @Html.ValidationMessageFor(m => m.author, "", new { style = "color: red; font-size: 10px;" })
+            </div>
+
+            <div class="form-group">
+                
+                <label for="registerTime">Register date</label><br>
+                @Html.TextBoxFor(m => m.registerTime, new { @type = "datetime-local", @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.registerTime, "", new { style = "color: red; font-size: 10px;" })
+            </div>
+
+            <div class="form-group">
+                
+                <label for="issuerlbl">Issuer</label>
+                @Html.TextBoxFor(m => m.issuer, new { @class = "form-control", placeholder = "Enter issuer name" })
+                @Html.ValidationMessageFor(m => m.issuer, "", new { style = "color: red; font-size: 10px;" })
+            </div><br>
+
+
+            <button type="submit" class="btn btn-primary" id="submitBook">Submit</button>
+        </form>
+    }
+
+
+}
+
+else
+{
+    <h2>Please login first!</h2>
+}
+
+
+@*java scripts*@
+
+
+@*<script type="text/javascript">
+    $(document).ready(function () {
+        $("#submitBook").click(function () {
+            if ($("#bookName").val() == "") {
+                alert("Please enter Book Name.");
+            }
+        });
+    });
+</script>*@
+
+

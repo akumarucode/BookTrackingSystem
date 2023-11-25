@@ -3,6 +3,7 @@ using BookTrackingSystem.Models.ConnectionString;
 using Humanizer;
 using Microsoft.AspNetCore.Http;
 using Microsoft.SqlServer.Server;
+using System.ComponentModel.DataAnnotations;
 using System.Data.SqlClient;
 using System.Globalization;
 
@@ -10,16 +11,24 @@ namespace BookTrackingSystem.Models
 {
     public class book
     {
-
-
+        
         public Guid bookID { get; set; }
+
+        [Required(ErrorMessage = "Book Name is required.")]
         public string bookName { get; set; }
 
+        [Required(ErrorMessage = "Author is required.")]
         public string author { get; set; }
+
+        public string status { get; set; }
+
 
         public DateTime registerTime { get; set; }
 
+        [Required(ErrorMessage = "Issuer is required.")]
         public string issuer { get; set; }
+
+        //public string status { get; set; }
 
         internal static object Where(Func<object, bool> value)
         {

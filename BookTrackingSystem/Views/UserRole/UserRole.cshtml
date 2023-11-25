@@ -1,0 +1,120 @@
+﻿@*@model List<BookTrackingSystem.Models.Users>*@
+@model IEnumerable<Microsoft.AspNetCore.Identity.IdentityUser>
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+@{
+    ViewData["Title"] = "User Role List";
+}
+
+@*check if sign in*@
+@if (SignInManager.IsSignedIn(User))
+{
+    @if (null != TempData["alertMessage"])
+    {
+        <script type="text/javascript">
+            alert('@TempData["alertMessage"]');
+        </script>
+    }
+
+}
+
+<div class="form-row">
+    <table>
+        <tr>
+            <form method="get" action="/Admin/userSetting">
+
+            <td style="padding-right:940px">
+            </td>
+            <td>
+                <input class="form-control" type="text" placeholder="Search for.." name="SearchString" value="@ViewData["CurrentFilter"]" aria-label="Search" aria-describedby="btnNavbarSearch" />
+            </td>
+            <td>
+                <input type="submit" value="Search" class="btn btn-primary" />
+            </td>
+            </form>
+        </tr>
+    </table>
+</div>
+@*<p>
+    <a href="@Url.Action("Index", "ExportExcel")" class="m-btn red">Export To Excel</a>
+</p>*@
+
+<h3>@ViewData["Title"]</h3>
+
+<form>
+    <table class="table table-responsive table-hover">
+        <thead>
+            <tr>
+
+                <th>Username</th>
+                <th>Normalized User Name</th>
+                <th>Email</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Any())
+            {
+                @foreach (var user in Model)
+                {
+                    <tr>
+
+                        <td>@user.UserName</td>
+                        <td>@user.NormalizedEmail</td>
+                        <td>@user.Email</td>
+                        <td><div class="btn-group btn-group-sm"><a asp-controller="DisplayRoles" asp-action="GetRoles" asp-route-id="@user.Id" class="btn btn-primary">Edit Role</a></div></td>
+
+                    </tr>
+                }
+            }
+
+            else
+            {
+                <tr>
+                    <td colspan="6">
+                        <div>
+                            No users are available at this moment!
+                        </div>
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+
+    </table>
+
+
+    @if (TempData["Message"] != null)
+    {
+        <script type="text/javascript">
+            window.onload = function () {
+                alert("@TempData["Message"]");
+            };
+        </script>
+    }
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        function Confirm() {
+            if (confirm("Confirm delete?")) {
+                $('input[name=confirm_value]').val('Yes');
+            }
+            else {
+                $('input[name=confirm_value]').val('No');
+            }
+        }
+    </script>
+</form>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $("#btnSubmit").click(function () {
+            $("input[name='GridHtml']").val($("#Grid").html());
+        });
+    });
+</script>
+
+
+

@@ -1,0 +1,62 @@
+﻿@model BookTrackingSystem.Models.viewModels.EditBookRequest
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+
+@if (null != TempData["alertMessage"])
+{
+    <script type="text/javascript">
+        alert('@TempData["alertMessage"]');
+    </script>
+}
+
+<div class="bg-secondary bg-opacity-10 py-2">
+    <div class="container">
+        <h1>Edit book - Admin Functionality</h1>
+    </div>
+</div>
+
+<div>
+    <form method="post">
+
+
+        <div class="mb-3">
+            <label class="form-label">Book ID</label>
+            <input type="text" name="bookID" class="form-control" asp-for="bookID" readonly />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Book Name</label>
+            <input type="text" name="bookName" class="form-control" asp-for="bookName" />
+        </div>
+
+
+        <div class="mb-3">
+            <label class="form-label">Author</label>
+            <input type="text" name="author" class="form-control" asp-for="author" />
+        </div>
+
+        <div class="form-group">
+            <label for="registerTime">Register date</label><br>
+            <input type="datetime-local" id="regdate" name="registerTime" asp-for="registerTime">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Issuer</label>
+            <input type="text" name="issuer" class="form-control" asp-for="issuer" />
+        </div>
+
+
+        <div class="mb-3">
+            <div class="d-flex">
+                <button type="submit" class="btn btn-dark">Update</button>
+            </div>
+
+        </div>
+
+
+
+    </form>
+
+</div>

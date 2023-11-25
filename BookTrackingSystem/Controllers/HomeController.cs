@@ -1,8 +1,9 @@
 ﻿using BookTrackingSystem.Data;
 using BookTrackingSystem.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
-
+using System.Reflection.Metadata.Ecma335;
 
 namespace BookTrackingSystem.Controllers
 {
@@ -17,7 +18,8 @@ namespace BookTrackingSystem.Controllers
 
         public IActionResult Index()
         {
-            return View();
+                return View();
+                   
         }
 
         public IActionResult Privacy()
@@ -27,7 +29,13 @@ namespace BookTrackingSystem.Controllers
 
         public IActionResult registerBook()
         {
-            return View();
+            if (User.Identity.IsAuthenticated)
+            {
+                return View();
+            }
+
+            return RedirectToAction("Restricted", "Restrictions");
+
         }
 
  
@@ -39,30 +47,38 @@ namespace BookTrackingSystem.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        [HttpPost]
-        public ActionResult registerBook(book bookDetails )
-        {
+        //[HttpPost]
+        //public ActionResult registerBook(book bookDetails )
+        //{
 
-            book bookInfo = new book();
+        //        book bookInfo = new book();
 
-            Guid idGenerator = Guid.NewGuid();
+        //        Guid idGenerator = Guid.NewGuid();
 
-            bookInfo.bookID = idGenerator;
-            bookInfo.bookName = HttpContext.Request.Form["bookNametxt"].ToString();
-            bookInfo.registerTime = Convert.ToDateTime(HttpContext.Request.Form["regdate"]);
-            bookInfo.author = HttpContext.Request.Form["authortxt"].ToString();
-            bookInfo.issuer = HttpContext.Request.Form["issuertxt"].ToString();
+        //        bookInfo.bookID = idGenerator;
+        //        bookInfo.bookName = HttpContext.Request.Form["bookNametxt"].ToString();
+        //        bookInfo.registerTime = Convert.ToDateTime(HttpContext.Request.Form["regdate"]);
+        //        bookInfo.author = HttpContext.Request.Form["authortxt"].ToString();
+        //        bookInfo.issuer = HttpContext.Request.Form["issuertxt"].ToString();
 
-            int result = bookInfo.SaveDetails();
-            if (result > 0)
-            {
-                ViewBag.Result = "Data Saved Successfully";
-            }
-            else
-            {
-                ViewBag.Result = "Something Went Wrong";
-            }
-            return RedirectToAction("DisplayBook", "displayBook");
-        }
+        //        if (ModelState.IsValid)
+        //        {
+        //            int result = bookInfo.SaveDetails();
+        //            if (result > 0)
+        //            {
+        //                ViewBag.Result = "Data Saved Successfully";
+        //            }
+        //            else
+        //            {
+        //                ViewBag.Result = "Something Went Wrong";
+        //            }
+
+        //        return RedirectToAction("DisplayBook", "displayBook");
+
+        //        }
+
+        //  return View(bookDetails);
+        //}
+
     }
 }
