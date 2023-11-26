@@ -12479,11 +12479,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Programming\\BookTrackingSystem\\BookTrackingSystem\\BookTrackingSystem.csproj",
+      "projectUniqueName": "F:\\Programming\\0.GITHUB\\BookTrackingSystem\\BookTrackingSystem\\BookTrackingSystem.csproj",
       "projectName": "BookTrackingSystem",
-      "projectPath": "F:\\Programming\\BookTrackingSystem\\BookTrackingSystem\\BookTrackingSystem.csproj",
+      "projectPath": "F:\\Programming\\0.GITHUB\\BookTrackingSystem\\BookTrackingSystem\\BookTrackingSystem.csproj",
       "packagesPath": "C:\\Users\\akmal\\.nuget\\packages\\",
-      "outputPath": "F:\\Programming\\BookTrackingSystem\\BookTrackingSystem\\obj\\",
+      "outputPath": "F:\\Programming\\0.GITHUB\\BookTrackingSystem\\BookTrackingSystem\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

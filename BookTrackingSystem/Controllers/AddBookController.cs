@@ -1,9 +1,11 @@
 ﻿using BookTrackingSystem.Data;
+using BookTrackingSystem.Data.Migrations;
 using BookTrackingSystem.Models;
 using BookTrackingSystem.Models.viewModels;
 using BookTrackingSystem.Repositories;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace BookTrackingSystem.Controllers
 {
@@ -38,30 +40,52 @@ namespace BookTrackingSystem.Controllers
 
         [Authorize(Roles = "Admin,Librarian")]
         [HttpPost]
-        public IActionResult registerBook(book bookDetails)
+        public async Task<IActionResult> registerBook(book bookDetails)
         {
             if (User.Identity.IsAuthenticated)
             {
-                var addBookRequest = new book
+                if(ModelState.IsValid)
                 {
-                    bookID = bookDetails.bookID,
-                    bookName = bookDetails.bookName,
-                    author = bookDetails.author,
-                    registerTime = bookDetails.registerTime,
-                    issuer = bookDetails.issuer,
-                    status = "Available"
+                    
+                    var getBookDetails = await bookRepository.GetBookRefAsync(bookDetails);
+                    if (getBookDetails == null) 
+                    
+                    {
+                        var addBookRequest = new book
+                        {
+                            bookID = bookDetails.bookID,
+                            refNo = bookDetails.refNo,
+                            bookName = bookDetails.bookName,
+                            author = bookDetails.author,
+                            registerTime = bookDetails.registerTime,
+                            issuer = bookDetails.issuer,
+                            status = "Available"
 
-                };
+                        };
 
-            bookRepository.RegisterBookAsync(addBookRequest);
-            return RedirectToAction("DisplayBook", "displayBook");
+                        await bookRepository.RegisterBookAsync(addBookRequest);
+                        TempData["alertMessage"] = "Book registered!";
+                        return RedirectToAction("DisplayBook", "displayBook");
+                    }
 
+
+                    else
+                    {
+                        TempData["alertMessage"] = "Reference No. already exist!";
+                        return View(bookDetails);
+                    }
+                }
+
+                else
+                {
+                    return View(bookDetails);
+                }
 
             }
 
             return RedirectToAction("Restricted", "Restrictions");
         }
 
-      
+
     }
 }

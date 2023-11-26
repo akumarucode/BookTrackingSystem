@@ -26,6 +26,7 @@
 
   <ItemGroup>
     <Folder Include="Views\DisplayRoles\" />
+    <Folder Include="wwwroot\Images\" />
   </ItemGroup>
 
 </Project>

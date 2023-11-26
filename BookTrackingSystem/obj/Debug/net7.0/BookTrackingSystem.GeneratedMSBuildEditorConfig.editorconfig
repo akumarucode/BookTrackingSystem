@@ -9,145 +9,145 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = BookTrackingSystem
 build_property.RootNamespace = BookTrackingSystem
-build_property.ProjectDir = F:\Programming\BookTrackingSystem\BookTrackingSystem\
+build_property.ProjectDir = F:\Programming\0.GITHUB\BookTrackingSystem\BookTrackingSystem\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = F:\Programming\BookTrackingSystem\BookTrackingSystem
+build_property.MSBuildProjectDirectory = F:\Programming\0.GITHUB\BookTrackingSystem\BookTrackingSystem
 build_property._RazorSourceGeneratorDebug = 
 
-[F:/Programming/BookTrackingSystem/BookTrackingSystem/Areas/Identity/Pages/Account/Login.cshtml]
+[F:/Programming/0.GITHUB/BookTrackingSystem/BookTrackingSystem/Areas/Identity/Pages/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Programming/BookTrackingSystem/BookTrackingSystem/Areas/Identity/Pages/Account/Register.cshtml]
+[F:/Programming/0.GITHUB/BookTrackingSystem/BookTrackingSystem/Areas/Identity/Pages/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Programming/BookTrackingSystem/BookTrackingSystem/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+[F:/Programming/0.GITHUB/BookTrackingSystem/BookTrackingSystem/Areas/Identity/Pages/Account/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Programming/BookTrackingSystem/BookTrackingSystem/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+[F:/Programming/0.GITHUB/BookTrackingSystem/BookTrackingSystem/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Programming/BookTrackingSystem/BookTrackingSystem/Areas/Identity/Pages/_ViewImports.cshtml]
+[F:/Programming/0.GITHUB/BookTrackingSystem/BookTrackingSystem/Areas/Identity/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Programming/BookTrackingSystem/BookTrackingSystem/Areas/Identity/Pages/_ViewStart.cshtml]
+[F:/Programming/0.GITHUB/BookTrackingSystem/BookTrackingSystem/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Programming/BookTrackingSystem/BookTrackingSystem/Views/AddBook/registerBook.cshtml]
+[F:/Programming/0.GITHUB/BookTrackingSystem/BookTrackingSystem/Views/AddBook/registerBook.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRkQm9va1xyZWdpc3RlckJvb2suY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Programming/BookTrackingSystem/BookTrackingSystem/Views/Admin/EditUser.cshtml]
+[F:/Programming/0.GITHUB/BookTrackingSystem/BookTrackingSystem/Views/Admin/EditUser.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdFVzZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Programming/BookTrackingSystem/BookTrackingSystem/Views/Admin/userSetting.cshtml]
+[F:/Programming/0.GITHUB/BookTrackingSystem/BookTrackingSystem/Views/Admin/userSetting.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cdXNlclNldHRpbmcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Programming/BookTrackingSystem/BookTrackingSystem/Views/BorrowBook/Borrow.cshtml]
+[F:/Programming/0.GITHUB/BookTrackingSystem/BookTrackingSystem/Views/BorrowBook/Borrow.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9ycm93Qm9va1xCb3Jyb3cuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Programming/BookTrackingSystem/BookTrackingSystem/Views/BorrowBook/borrowList.cshtml]
+[F:/Programming/0.GITHUB/BookTrackingSystem/BookTrackingSystem/Views/BorrowBook/borrowList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9ycm93Qm9va1xib3Jyb3dMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Programming/BookTrackingSystem/BookTrackingSystem/Views/BorrowBook/ReturnBook.cshtml]
+[F:/Programming/0.GITHUB/BookTrackingSystem/BookTrackingSystem/Views/BorrowBook/ReturnBook.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9ycm93Qm9va1xSZXR1cm5Cb29rLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Programming/BookTrackingSystem/BookTrackingSystem/Views/BorrowBook/SearchBorrow.cshtml]
+[F:/Programming/0.GITHUB/BookTrackingSystem/BookTrackingSystem/Views/BorrowBook/SearchBorrow.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9ycm93Qm9va1xTZWFyY2hCb3Jyb3cuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Programming/BookTrackingSystem/BookTrackingSystem/Views/BorrowBook/SearchReturn.cshtml]
+[F:/Programming/0.GITHUB/BookTrackingSystem/BookTrackingSystem/Views/BorrowBook/SearchReturn.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9ycm93Qm9va1xTZWFyY2hSZXR1cm4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Programming/BookTrackingSystem/BookTrackingSystem/Views/displayBook/displayBook.cshtml]
+[F:/Programming/0.GITHUB/BookTrackingSystem/BookTrackingSystem/Views/displayBook/displayBook.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcZGlzcGxheUJvb2tcZGlzcGxheUJvb2suY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Programming/BookTrackingSystem/BookTrackingSystem/Views/displayBook/SearchBook.cshtml]
+[F:/Programming/0.GITHUB/BookTrackingSystem/BookTrackingSystem/Views/displayBook/SearchBook.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcZGlzcGxheUJvb2tcU2VhcmNoQm9vay5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Programming/BookTrackingSystem/BookTrackingSystem/Views/EditBook/Edit.cshtml]
+[F:/Programming/0.GITHUB/BookTrackingSystem/BookTrackingSystem/Views/EditBook/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWRpdEJvb2tcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Programming/BookTrackingSystem/BookTrackingSystem/Views/ExportExcel/Index.cshtml]
+[F:/Programming/0.GITHUB/BookTrackingSystem/BookTrackingSystem/Views/ExportExcel/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhwb3J0RXhjZWxcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Programming/BookTrackingSystem/BookTrackingSystem/Views/Home/Index.cshtml]
+[F:/Programming/0.GITHUB/BookTrackingSystem/BookTrackingSystem/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Programming/BookTrackingSystem/BookTrackingSystem/Views/Home/Privacy.cshtml]
+[F:/Programming/0.GITHUB/BookTrackingSystem/BookTrackingSystem/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Programming/BookTrackingSystem/BookTrackingSystem/Views/Home/registerBook.cshtml]
+[F:/Programming/0.GITHUB/BookTrackingSystem/BookTrackingSystem/Views/Home/registerBook.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxyZWdpc3RlckJvb2suY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Programming/BookTrackingSystem/BookTrackingSystem/Views/roleSetting/AddRole.cshtml]
+[F:/Programming/0.GITHUB/BookTrackingSystem/BookTrackingSystem/Views/roleSetting/AddRole.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3Nccm9sZVNldHRpbmdcQWRkUm9sZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Programming/BookTrackingSystem/BookTrackingSystem/Views/roleSetting/EditRole.cshtml]
+[F:/Programming/0.GITHUB/BookTrackingSystem/BookTrackingSystem/Views/roleSetting/EditRole.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3Nccm9sZVNldHRpbmdcRWRpdFJvbGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Programming/BookTrackingSystem/BookTrackingSystem/Views/roleSetting/roleSetting.cshtml]
+[F:/Programming/0.GITHUB/BookTrackingSystem/BookTrackingSystem/Views/roleSetting/roleSetting.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3Nccm9sZVNldHRpbmdccm9sZVNldHRpbmcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Programming/BookTrackingSystem/BookTrackingSystem/Views/Shared/Error.cshtml]
+[F:/Programming/0.GITHUB/BookTrackingSystem/BookTrackingSystem/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Programming/BookTrackingSystem/BookTrackingSystem/Views/Shared/_LoginPartial.cshtml]
+[F:/Programming/0.GITHUB/BookTrackingSystem/BookTrackingSystem/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Programming/BookTrackingSystem/BookTrackingSystem/Views/Shared/_memberLayout.cshtml]
+[F:/Programming/0.GITHUB/BookTrackingSystem/BookTrackingSystem/Views/Shared/_memberLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9tZW1iZXJMYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Programming/BookTrackingSystem/BookTrackingSystem/Views/Shared/_ValidationScriptsPartial.cshtml]
+[F:/Programming/0.GITHUB/BookTrackingSystem/BookTrackingSystem/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Programming/BookTrackingSystem/BookTrackingSystem/Views/UserRole/editUserRole.cshtml]
+[F:/Programming/0.GITHUB/BookTrackingSystem/BookTrackingSystem/Views/UserRole/editUserRole.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclJvbGVcZWRpdFVzZXJSb2xlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Programming/BookTrackingSystem/BookTrackingSystem/Views/UserRole/UserRole.cshtml]
+[F:/Programming/0.GITHUB/BookTrackingSystem/BookTrackingSystem/Views/UserRole/UserRole.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclJvbGVcVXNlclJvbGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Programming/BookTrackingSystem/BookTrackingSystem/Views/UserRole/UserRoleSetting.cshtml]
+[F:/Programming/0.GITHUB/BookTrackingSystem/BookTrackingSystem/Views/UserRole/UserRoleSetting.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclJvbGVcVXNlclJvbGVTZXR0aW5nLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Programming/BookTrackingSystem/BookTrackingSystem/Views/_ViewImports.cshtml]
+[F:/Programming/0.GITHUB/BookTrackingSystem/BookTrackingSystem/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Programming/BookTrackingSystem/BookTrackingSystem/Views/_ViewStart.cshtml]
+[F:/Programming/0.GITHUB/BookTrackingSystem/BookTrackingSystem/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Programming/BookTrackingSystem/BookTrackingSystem/Views/Shared/_Layout.cshtml]
+[F:/Programming/0.GITHUB/BookTrackingSystem/BookTrackingSystem/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-42erld0yzh

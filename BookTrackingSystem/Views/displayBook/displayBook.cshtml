@@ -49,6 +49,7 @@
             <thead>
                 <tr>
                     <th>Book name</th>
+                    <th>Reference No.</th>
                     <th>Author</th>
                     <th>Register Time</th>
                     <th>Issuer</th>
@@ -64,11 +65,13 @@
                         <tr>
                             
                             <td>@book.bookName</td>
+                            <td>@book.refNo</td>
                             <td>@book.author</td>
                             <td>@book.registerTime</td>
                             <td>@book.issuer</td>
                         <td>@book.status</td>
 @*                            <td><div class="btn-group btn-group-sm"><a asp-controller="EditBook" asp-action="Edit" asp-route-id="@book.bookID" class="btn btn-primary">Edit</a></div></td>*@
+                        <input type="hidden" name="confirm_value" value="" />
                         <td><input type="submit" value="Edit" asp-controller="EditBook" asp-action="Edit" asp-route-id="@book.bookID" class="btn btn-primary" /></td>
                         <td><input type="submit" value="Borrow" asp-controller="BorrowBook" asp-action="Borrow" asp-route-id="@book.bookID" class="btn btn-primary" /></td>
                             <td>

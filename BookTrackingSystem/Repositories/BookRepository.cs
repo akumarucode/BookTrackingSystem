@@ -2,6 +2,7 @@
 using BookTrackingSystem.Models;
 using BookTrackingSystem.Models.viewModels;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Office.Interop.Excel;
 
 namespace BookTrackingSystem.Repositories
 {
@@ -41,10 +42,17 @@ namespace BookTrackingSystem.Repositories
             return bookDbContext.books.FirstOrDefaultAsync(x => x.bookID == id);
         }
 
+        public Task<book?> GetBookRefAsync(book bookDetails)
+        {
+
+            return bookDbContext.books.FirstOrDefaultAsync(x => x.refNo == bookDetails.refNo);
+
+        }
+
         public async Task<book> RegisterBookAsync(book bookDetails)
         {
-             bookDbContext.books.Add(bookDetails);
-             bookDbContext.SaveChanges();
+            await bookDbContext.books.AddAsync(bookDetails);
+            await bookDbContext.SaveChangesAsync();
             return bookDetails;
         }
 
@@ -55,6 +63,7 @@ namespace BookTrackingSystem.Repositories
             if (existingBook != null)
             {
                 existingBook.bookName = book.bookName;
+                existingBook.refNo = book.refNo;
                 existingBook.author = book.author;
                 existingBook.registerTime = book.registerTime;
                 existingBook.issuer = book.issuer;

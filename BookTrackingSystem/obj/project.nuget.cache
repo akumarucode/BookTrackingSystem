@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NozG8oEWk8a24HT6NNbuE9Q9OnHXsA5Rfr0QnrGUv7b1jjVELlPJAcrOc2dpDpXoxmeGzVHLhGDdPN/ZMo27wg==",
+  "dgSpecHash": "ZJUU20/R9+UTl5DM+CCuva5OljtWk5eZ5BSyc9sn05C0d1OH/5Md1IZkC78KgXQ9QTOsmE3gLmP/bCZPWBcF3Q==",
   "success": true,
-  "projectFilePath": "F:\\Programming\\BookTrackingSystem\\BookTrackingSystem\\BookTrackingSystem.csproj",
+  "projectFilePath": "F:\\Programming\\0.GITHUB\\BookTrackingSystem\\BookTrackingSystem\\BookTrackingSystem.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\akmal\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\akmal\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

@@ -40,6 +40,7 @@ namespace BookTrackingSystem.Controllers
                     {
                         bookID = book.bookID,
                         bookName = book.bookName,
+                        refNo = book.refNo,
                         author = book.author,
                         registerTime = book.registerTime,
                         issuer = book.issuer
@@ -65,7 +66,7 @@ namespace BookTrackingSystem.Controllers
             if(ModelState.IsValid) 
             {
                 var book = new book 
-                { bookID = editBookRequest.bookID, bookName = editBookRequest.bookName, author = editBookRequest.author, registerTime = editBookRequest.registerTime, issuer = editBookRequest.issuer 
+                { bookID = editBookRequest.bookID, bookName = editBookRequest.bookName,refNo = editBookRequest.refNo, author = editBookRequest.author, registerTime = editBookRequest.registerTime, issuer = editBookRequest.issuer 
                 };
 
                 var updatedBook = await bookRepository.UpdateBookAsync(book);
@@ -122,9 +123,11 @@ namespace BookTrackingSystem.Controllers
         public async Task<IActionResult> Delete(string confirm_value,Guid Id)
         {
 
-            var deleteBook = await bookRepository.DeleteBookAsync(Id);
+            
             if (confirm_value == "Yes")
             {
+                await bookRepository.DeleteBookAsync(Id);
+                TempData["alertMessage"] = "Book deleted!";
                 return RedirectToAction("DisplayBook", "displayBook");
             }
             else
@@ -153,6 +156,13 @@ namespace BookTrackingSystem.Controllers
             return RedirectToAction("DisplayBook", "displayBook");
         }
 
+        [Authorize(Roles = "Admin,Librarian")]
+        //redirect to updated page
+        public ActionResult Cancel()
+        {
+            TempData["alertMessage"] = "Operation cancelled!";
+            return RedirectToAction("DisplayBook", "displayBook");
+        }
 
     }
 }

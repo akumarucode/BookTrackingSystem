@@ -19,6 +19,24 @@ html {
 
 body {
   margin-bottom: 60px;
+
+}
+
+#backgroundImage {
+    background-image: url('../Images/homePage.png');
+    background-size: cover; /*Ensures the background image covers the entire container */
+    background-position: center; /*Centers the background image */
+    height: 100vh; /*Makes sure the background image covers the full height of the viewport */
+    align-items: center;
+    justify-content: center;
+}
+
+#indexBackground {
+    background-image: url('../Images/catBook2.png');
+    background-size: 300px; /* Ensures the background image covers the entire container */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the background image from repeating */
+
 }
 
 

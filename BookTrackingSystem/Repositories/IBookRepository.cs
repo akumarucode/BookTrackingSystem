@@ -9,6 +9,8 @@ namespace BookTrackingSystem.Repositories
 
         Task<book?> GetBookAsync(Guid id);
 
+        Task<book?> GetBookRefAsync(book bookDetails);
+
         Task<book> RegisterBookAsync(book bookDetails);
         Task<book?> UpdateBookAsync(book book);
 
