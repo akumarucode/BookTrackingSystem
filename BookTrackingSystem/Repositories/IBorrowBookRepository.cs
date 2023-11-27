@@ -25,5 +25,14 @@ namespace BookTrackingSystem.Repositories
 
         Task<ReturnList?> DeleteReturnAsync(Guid Id);
 
+
+        //Transaction methods
+
+        Task<BorrowHistory> BorrowTransactionINAsync(BorrowHistory transactionDetails);
+        Task<ReturnHistory> ReturnTransactionINAsync(ReturnHistory transactionDetails);
+
+        Task<IEnumerable<BorrowHistory>> DisplayBorrowHistory();
+        Task<IEnumerable<ReturnHistory>> DisplayReturnHistory();
+
     }
 }

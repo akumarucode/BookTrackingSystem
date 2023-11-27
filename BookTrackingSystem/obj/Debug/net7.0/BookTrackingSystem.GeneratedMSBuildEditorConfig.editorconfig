@@ -88,6 +88,22 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhwb3J0RXhjZWxcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[F:/Programming/0.GITHUB/BookTrackingSystem/BookTrackingSystem/Views/History/borrowHistory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGlzdG9yeVxib3Jyb3dIaXN0b3J5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Programming/0.GITHUB/BookTrackingSystem/BookTrackingSystem/Views/History/returnHistory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGlzdG9yeVxyZXR1cm5IaXN0b3J5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Programming/0.GITHUB/BookTrackingSystem/BookTrackingSystem/Views/History/SearchBorrowHistory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGlzdG9yeVxTZWFyY2hCb3Jyb3dIaXN0b3J5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Programming/0.GITHUB/BookTrackingSystem/BookTrackingSystem/Views/History/SearchReturnHistory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGlzdG9yeVxTZWFyY2hSZXR1cm5IaXN0b3J5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [F:/Programming/0.GITHUB/BookTrackingSystem/BookTrackingSystem/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

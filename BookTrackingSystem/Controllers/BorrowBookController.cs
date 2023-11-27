@@ -4,6 +4,7 @@ using BookTrackingSystem.Models.viewModels;
 using BookTrackingSystem.Repositories;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Data.SqlTypes;
 using System.Net;
 
@@ -140,13 +141,29 @@ namespace BookTrackingSystem.Controllers
                         borrowDate = returnDetails.borrowDate,
                         expectReturnDate = returnDetails.expectReturnDate,
                         remark = returnDetails.remark
-
                     };
+
+                //convert borrowID to string
+                string borrowIDString = returnDetails.borrowID.ToString();
+
+                //insert to borrow transaction
+                var borrowTransaction = new BorrowHistory
+                {
+                    transID = Guid.NewGuid(),
+                    libraryCardNo = returnDetails.libraryCardNo,
+                    borrowID = borrowIDString,
+                    bookName = returnDetails.bookName,
+                    borrowerName = returnDetails.fullName,
+                    borrowDate = returnDetails.borrowDate,
+                    approvedDate = DateTime.Now
+
+                };
 
                     Guid convertedBookID = new Guid(returnDetails.bookID);
 
                     await bookRepository.UpdateBookStatusBorrowedAsync(convertedBookID);
                     await borrowBookRepository.AddReturnDetails(returnBookReq);
+                    await borrowBookRepository.BorrowTransactionINAsync(borrowTransaction);
                     await borrowBookRepository.DeleteBorrowAsync(Id);
                     return RedirectToAction("borrowList", "BorrowBook");
              }
@@ -207,7 +224,27 @@ namespace BookTrackingSystem.Controllers
                 {
                     if (confirm_value == "Yes") 
                     {
+                        //get details from db
                         var returnDetails = await borrowBookRepository.GetReturnDetails(Id);
+
+                        string convertedReturnID = returnDetails.returnID.ToString();
+
+                        //insert into return history
+                        var returnTransaction = new ReturnHistory
+                        {
+                            returnTransID = Guid.NewGuid(),
+                            borrowID = convertedReturnID,
+                            borrowerName = returnDetails.fullName,
+                            libraryCardNo = returnDetails.libraryCardNo,
+                            bookName = returnDetails.bookName,
+                            borrowDate = returnDetails.borrowDate,
+                            actualReturnDate = DateTime.Now
+
+                        };
+                        await borrowBookRepository.ReturnTransactionINAsync(returnTransaction);
+
+
+                        //update book status and delete selected item from return list
                         Guid convertedBookID = new Guid(returnDetails.bookID);
                         await bookRepository.UpdateBookStatusAvailableAsync(convertedBookID);
                         await borrowBookRepository.DeleteReturnAsync(returnDetails.returnID);

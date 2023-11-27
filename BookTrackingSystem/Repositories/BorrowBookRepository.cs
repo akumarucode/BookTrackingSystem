@@ -3,6 +3,7 @@ using BookTrackingSystem.Models;
 using BookTrackingSystem.Models.viewModels;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using System.Net;
 
 namespace BookTrackingSystem.Repositories
 {
@@ -17,8 +18,30 @@ namespace BookTrackingSystem.Repositories
 
         public async Task<BorrowBookRequest> RegisterBorrowRequestAsync(BorrowBookRequest borrowDetails)
         {
-            bookDbContext.BorrowBookRequests.Add(borrowDetails);
-            bookDbContext.SaveChanges();
+            if (borrowDetails.remark == null)
+            {
+                var borrowBook = new BorrowBookRequest
+                {
+                    borrowID = borrowDetails.borrowID,
+                    bookID = borrowDetails.bookID,
+                    bookName = borrowDetails.bookName,
+                    fullName = borrowDetails.fullName,
+                    libraryCardNo = borrowDetails.libraryCardNo,
+                    borrowDate = borrowDetails.borrowDate,
+                    expectReturnDate = borrowDetails.expectReturnDate,
+                    remark = "None"
+                };
+
+                bookDbContext.BorrowBookRequests.Add(borrowBook);
+                bookDbContext.SaveChanges();
+            }
+
+            else
+            {
+                bookDbContext.BorrowBookRequests.Add(borrowDetails);
+                bookDbContext.SaveChanges();
+            }
+
             return borrowDetails;
         }
 
@@ -80,6 +103,35 @@ namespace BookTrackingSystem.Repositories
             }
 
             return null;
+        }
+
+
+        //History methods
+        public async Task<BorrowHistory> BorrowTransactionINAsync(BorrowHistory transactionDetails)
+        {
+            bookDbContext.borrowHistories.Add(transactionDetails);
+            bookDbContext.SaveChanges();
+            return transactionDetails;
+        }
+
+
+        public async Task<ReturnHistory> ReturnTransactionINAsync(ReturnHistory transactionDetails)
+        {
+            bookDbContext.returnHistories.Add(transactionDetails);
+            bookDbContext.SaveChanges();
+            return transactionDetails;
+        }
+
+
+
+        public async Task<IEnumerable<BorrowHistory>> DisplayBorrowHistory()
+        {
+            return await bookDbContext.borrowHistories.ToListAsync();
+        }
+
+        public async Task<IEnumerable<ReturnHistory>> DisplayReturnHistory()
+        {
+            return await bookDbContext.returnHistories.ToListAsync();
         }
 
 

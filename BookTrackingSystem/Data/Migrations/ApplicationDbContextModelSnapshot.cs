@@ -51,12 +51,77 @@ namespace BookTrackingSystem.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("remark")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("borrowID");
 
                     b.ToTable("BorrowBookRequests");
+                });
+
+            modelBuilder.Entity("BookTrackingSystem.Models.BorrowHistory", b =>
+                {
+                    b.Property<Guid>("transID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("approvedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("bookName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("borrowDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("borrowID")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("borrowerName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("libraryCardNo")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("transID");
+
+                    b.ToTable("borrowHistories");
+                });
+
+            modelBuilder.Entity("BookTrackingSystem.Models.ReturnHistory", b =>
+                {
+                    b.Property<Guid>("returnTransID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("actualReturnDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("bookName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("borrowDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("borrowID")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("borrowerName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("libraryCardNo")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("returnTransID");
+
+                    b.ToTable("returnHistories");
                 });
 
             modelBuilder.Entity("BookTrackingSystem.Models.ReturnList", b =>

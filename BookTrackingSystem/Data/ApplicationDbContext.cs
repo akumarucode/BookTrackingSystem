@@ -24,6 +24,10 @@ namespace BookTrackingSystem.Data
         public DbSet<BorrowBookRequest> BorrowBookRequests { get; set; }
         public DbSet<ReturnList> ReturnLists { get; set; }
 
+        public DbSet<BorrowHistory> borrowHistories { get; set; }
+        public DbSet<ReturnHistory> returnHistories { get; set; }
+
+
 
     }
 }
