@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "/HwdzbYdmtuRa2PTvSzLO52kYR9IaGyc1mxJ5YPmjbk=",
+  "Hash": "jdd8ICtyXuW42dkdLtLMO3WvbMhs2dQhq+JE9GKU/jI=",
   "Source": "BookTrackingSystem",
   "BasePath": "_content/BookTrackingSystem",
   "Mode": "Default",
@@ -1105,12 +1105,12 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "F:\\Programming\\0.GITHUB\\BookTrackingSystem\\BookTrackingSystem\\wwwroot\\Images\\2653685.png",
+      "Identity": "F:\\Programming\\0.GITHUB\\BookTrackingSystem\\BookTrackingSystem\\wwwroot\\Images\\catBook2.png",
       "SourceId": "BookTrackingSystem",
       "SourceType": "Discovered",
       "ContentRoot": "F:\\Programming\\0.GITHUB\\BookTrackingSystem\\BookTrackingSystem\\wwwroot\\",
       "BasePath": "_content/BookTrackingSystem",
-      "RelativePath": "Images/2653685.png",
+      "RelativePath": "Images/catBook2.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1119,24 +1119,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\2653685.png"
-    },
-    {
-      "Identity": "F:\\Programming\\0.GITHUB\\BookTrackingSystem\\BookTrackingSystem\\wwwroot\\Images\\homePage.png",
-      "SourceId": "BookTrackingSystem",
-      "SourceType": "Discovered",
-      "ContentRoot": "F:\\Programming\\0.GITHUB\\BookTrackingSystem\\BookTrackingSystem\\wwwroot\\",
-      "BasePath": "_content/BookTrackingSystem",
-      "RelativePath": "Images/homePage.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\homePage.png"
+      "OriginalItemSpec": "wwwroot\\Images\\catBook2.png"
     },
     {
       "Identity": "F:\\Programming\\0.GITHUB\\BookTrackingSystem\\BookTrackingSystem\\wwwroot\\Images\\mainIcon.png",

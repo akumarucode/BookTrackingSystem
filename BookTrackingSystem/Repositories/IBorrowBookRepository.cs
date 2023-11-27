@@ -6,7 +6,7 @@ namespace BookTrackingSystem.Repositories
     public interface IBorrowBookRepository
     {
         //Borrow methods
-        Task<BorrowBookRequest> RegisterBorrowRequest(BorrowBookRequest borrowDetails);
+        Task<BorrowBookRequest> RegisterBorrowRequestAsync(BorrowBookRequest borrowDetails);
 
         Task<IEnumerable<BorrowBookRequest>> DisplayBorrowList();
 

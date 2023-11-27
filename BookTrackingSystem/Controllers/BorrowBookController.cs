@@ -4,6 +4,7 @@ using BookTrackingSystem.Models.viewModels;
 using BookTrackingSystem.Repositories;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Data.SqlTypes;
 using System.Net;
 
 namespace BookTrackingSystem.Controllers
@@ -50,14 +51,27 @@ namespace BookTrackingSystem.Controllers
 
         [Authorize(Roles = "Admin,Librarian,User")]
         [HttpPost]
-        public IActionResult Borrow(BorrowBookRequest borrowDetails)
+        public async Task<IActionResult> BorrowAsync(BorrowBookRequest borrowDetails)
         {
             if (User.Identity.IsAuthenticated)
             {
                 if (ModelState.IsValid)
                 {
-                    borrowBookRepository.RegisterBorrowRequest(borrowDetails);
-                    return RedirectToAction("BorrowRequestRegistered");
+                    Guid bookID = Guid.Parse(borrowDetails.bookID);
+                    var getBookDetails = await bookRepository.GetBookAsync(bookID);
+
+                    if(getBookDetails.status != "Borrowed")
+                    {
+                        await borrowBookRepository.RegisterBorrowRequestAsync(borrowDetails);
+                        return RedirectToAction("BorrowRequestRegistered");
+                    }
+
+                    else
+                    {
+                        TempData["alertMessage"] = "Cannot borrow book with status Borrowed!";
+                        return RedirectToAction("displayBook","DisplayBook");
+                    }
+
                 }
 
                 return View(borrowDetails);

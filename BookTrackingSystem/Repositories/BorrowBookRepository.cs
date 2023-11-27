@@ -15,7 +15,7 @@ namespace BookTrackingSystem.Repositories
             this.bookDbContext = bookDbContext;
         }
 
-        public async Task<BorrowBookRequest> RegisterBorrowRequest(BorrowBookRequest borrowDetails)
+        public async Task<BorrowBookRequest> RegisterBorrowRequestAsync(BorrowBookRequest borrowDetails)
         {
             bookDbContext.BorrowBookRequests.Add(borrowDetails);
             bookDbContext.SaveChanges();
