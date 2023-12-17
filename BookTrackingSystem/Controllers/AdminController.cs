@@ -104,8 +104,7 @@ namespace BookTrackingSystem.Controllers
         public async Task<IActionResult> EditUser(Users editUserRequest)
         {
             
-            if (ModelState.IsValid)
-            {
+
                 var user = new Users { Id = editUserRequest.Id, UserName = editUserRequest.UserName, NormalizedUserName = editUserRequest.NormalizedUserName, Email = editUserRequest.Email};
 
                     //save change
@@ -114,10 +113,7 @@ namespace BookTrackingSystem.Controllers
                     //show success notification
                     return RedirectToAction("Updated");
 
-                
-            }
-            //show failure notification
-            return RedirectToAction("Edit", new { id = editUserRequest.Id });
+               
         }
 
         [Authorize(Roles = "Admin")]

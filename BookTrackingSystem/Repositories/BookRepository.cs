@@ -31,9 +31,14 @@ namespace BookTrackingSystem.Repositories
             return null;
         }
 
+        //public async Task<IEnumerable<book>> DisplayBookAsync()
+        //{
+        //    return await bookDbContext.books.ToListAsync();
+        //}
+
         public async Task<IEnumerable<book>> DisplayBookAsync()
         {
-            return await bookDbContext.books.ToListAsync();
+            return await bookDbContext.books.OrderByDescending(book => book.registerTime).ToListAsync();
         }
 
 

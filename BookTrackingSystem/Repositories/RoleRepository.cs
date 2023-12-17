@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using System.Data;
 
 namespace BookTrackingSystem.Repositories
 {
@@ -94,15 +95,36 @@ namespace BookTrackingSystem.Repositories
             return await _context.Users.ToListAsync();
         }
 
-        public async Task<IdentityUserRole<string>> SetUserRole(IdentityUserRole<string> userDetails)
+        public async Task<IEnumerable<IdentityUserRole<string>>> DisplayUserRoleAsync()
         {
-            _context.UserRoles.Add(userDetails);
-            _context.SaveChanges();
-            return userDetails;
+            return await _context.UserRoles.ToListAsync();
         }
 
 
+        public async Task<IdentityUserRole<string>> SetUserRole(IdentityUserRole<string> userDetails)
+        {
+            string searchString = userDetails.UserId.ToString();
 
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                var searchedUserRole = await _context.UserRoles.FirstOrDefaultAsync(n=> n.UserId == searchString);
+                _context.UserRoles.Remove(searchedUserRole);
+                _context.UserRoles.Add(userDetails);
+                await _context.SaveChangesAsync();
+
+                return userDetails;
+
+            }
+            
+            else
+            {
+                _context.UserRoles.Add(userDetails);
+                await _context.SaveChangesAsync();
+
+                return userDetails;
+            }
+        }
 
     }
 }

@@ -69,7 +69,15 @@
                         <td>@book.author</td>
                         <td>@book.registerTime</td>
                         <td>@book.issuer</td>
-                        <td>@book.status</td>
+                        @if (book.status == "Available")
+                        {
+                            <td style="background-color:green">@book.status</td>
+                        }
+
+                        @if (book.status == "Borrowed")
+                        {
+                            <td style="background-color:orange">@book.status</td>
+                        }
                         @*                            <td><div class="btn-group btn-group-sm"><a asp-controller="EditBook" asp-action="Edit" asp-route-id="@book.bookID" class="btn btn-primary">Edit</a></div></td>*@
                         <td><input type="submit" value="Edit" asp-controller="EditBook" asp-action="Edit" asp-route-id="@book.bookID" class="btn btn-primary" /></td>
                         <td>

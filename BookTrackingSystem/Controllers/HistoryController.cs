@@ -74,7 +74,7 @@ namespace BookTrackingSystem.Controllers
 
             var searchedReturnHistory = await borrowBookRepository.DisplayReturnHistory();
 
-            if (!String.IsNullOrEmpty(searchString))
+            if (!String.IsNullOrEmpty(searchString)) 
             {
                 searchedReturnHistory = searchedReturnHistory.Where(m => m.bookName.Contains(searchString)
                                        || m.libraryCardNo.Contains(searchString)

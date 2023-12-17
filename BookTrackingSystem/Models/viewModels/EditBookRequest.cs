@@ -15,6 +15,8 @@ namespace BookTrackingSystem.Models.viewModels
         [Required(ErrorMessage = "Author is required.")]
         public string author { get; set; }
 
+        public string? status { get; set; }
+
         [DataType(DataType.Date, ErrorMessage = "Register Time is required.")]
         public DateTime registerTime { get; set; }
 

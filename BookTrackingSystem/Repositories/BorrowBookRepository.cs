@@ -126,12 +126,12 @@ namespace BookTrackingSystem.Repositories
 
         public async Task<IEnumerable<BorrowHistory>> DisplayBorrowHistory()
         {
-            return await bookDbContext.borrowHistories.ToListAsync();
+            return await bookDbContext.borrowHistories.OrderByDescending(x => x.approvedDate).ToListAsync();
         }
 
         public async Task<IEnumerable<ReturnHistory>> DisplayReturnHistory()
         {
-            return await bookDbContext.returnHistories.ToListAsync();
+            return await bookDbContext.returnHistories.OrderByDescending(x=>x.actualReturnDate).ToListAsync();
         }
 
 

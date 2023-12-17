@@ -19,6 +19,8 @@ namespace BookTrackingSystem.Repositories
 
         Task<IdentityUserRole<string>> SetUserRole(IdentityUserRole<string> userDetails);
 
-        Task<IdentityUserRole<string?>> DeleteUserRoleAsync(IdentityUserRole<string?> userDetails);
+        Task<IdentityUserRole<string>> DeleteUserRoleAsync(IdentityUserRole<string> userDetails);
+
+        Task<IEnumerable<IdentityUserRole<string>>> DisplayUserRoleAsync();
     }
 }

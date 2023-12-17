@@ -69,19 +69,56 @@ namespace BookTrackingSystem.Controllers
                 { bookID = editBookRequest.bookID, bookName = editBookRequest.bookName,refNo = editBookRequest.refNo, author = editBookRequest.author, registerTime = editBookRequest.registerTime, issuer = editBookRequest.issuer 
                 };
 
-                var updatedBook = await bookRepository.UpdateBookAsync(book);
+                var getBookDetails = await bookRepository.GetBookRefAsync(book);
 
-                if (updatedBook != null)
+                if (getBookDetails == null)
                 {
+                    var updatedBook = await bookRepository.UpdateBookAsync(book);
 
-                    //show success notification
-                    return RedirectToAction("Updated");
+                    if (updatedBook != null)
+                    {
 
+                        //show success notification
+                        return RedirectToAction("Updated");
+
+                    }
                 }
 
                 else
                 {
-                    return null;
+                    if (getBookDetails.refNo == editBookRequest.refNo && getBookDetails.bookID == editBookRequest.bookID)
+                    {
+                        var updatedBook = await bookRepository.UpdateBookAsync(book);
+
+                        if (updatedBook != null)
+                        {
+
+                            //show success notification
+                            return RedirectToAction("Updated");
+
+                        }
+                    }
+
+                    if (getBookDetails.refNo == editBookRequest.refNo && getBookDetails.bookID != editBookRequest.bookID)
+                    {
+                        TempData["alertMessage"] = "Reference No. already exist!";
+                        return View(editBookRequest);
+
+                    }
+
+                    else
+                    {
+                        var updatedBook = await bookRepository.UpdateBookAsync(book);
+
+                        if (updatedBook != null)
+                        {
+
+                            //show success notification
+                            return RedirectToAction("Updated");
+
+                        }
+                    }
+
                 }
             }
             //show failure notification
